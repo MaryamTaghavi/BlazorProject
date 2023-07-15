@@ -1,0 +1,32 @@
+﻿@page "/Index"
+@inherits UnitBase
+
+
+<PageTitle>لیست واحد ها</PageTitle>
+
+<h1>لیست واحد</h1>
+
+@if (UnitList == null)
+{
+    <p><em>در حال لود ...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Code</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var unit in UnitList)
+        {
+            <tr>
+                <td>@unit.Title</td>
+                <td>@unit.Code</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
