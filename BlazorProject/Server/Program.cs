@@ -10,10 +10,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<IUnitService , UnitService>();
-//var baseAddress = builder.Configuration.GetValue<string>("BaseUrl");
 
-//builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
 
+
+var baseAddress = builder.Configuration.GetValue<string>("BaseUrl");
+
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7212") });
+
+builder.Services.AddScoped<IUnitService, UnitService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -21,7 +21,7 @@ namespace Application.Services
         {
             try
             {
-                var units = await _httpClient.GetFromJsonAsync<IEnumerable<UnitDto>>("api/Unit");
+              //  var units = await _httpClient.GetFromJsonAsync<IEnumerable<UnitDto>>("api/Unit");
 
                 return null;
             }
